@@ -13,8 +13,12 @@ const userSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
+    },
+    username:{
+        type:String,
+        required:true
     }
-},{timestamps:true});
+},{timestamps:true});//timestamps for createdAt and updatedAt
 
 const User = mongoose.model("User",userSchema);
 

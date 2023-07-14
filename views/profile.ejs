@@ -1,10 +1,22 @@
 <html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
-    </head>
-    <body>
-         <h1>This is Profile page</h1>
-    </body>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/profilestyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>User's Profile</h2>
+      <div class="inner">
+        <form action="/users/signout" method="POST">
+              <div class="details">
+              <span><%= user.username %></span>
+              <span><%= user.name%></span>
+              <span><%= user.email%></span>
+              <input type="submit" value="SignOut" class="btn">  
+            </div>
+          </form>
+      </div>
+       
+    </div>
+  </body>
 </html>
