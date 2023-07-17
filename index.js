@@ -25,8 +25,8 @@ app.use(
     name: "social",
     // TODO change the secret before deployment in production mode
     secret: "somethig",
-    saveUninitialized: false,
-    resave: false,
+    saveUninitialized: false, //if user not logged in don't save any data in session cookie
+    resave: false, // user logged in and already the user data present in session cookie so don't save or rewrite the data
     cookie: {
       maxAge: 1000 * 60 * 100,
     },
