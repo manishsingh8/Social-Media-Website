@@ -42,7 +42,10 @@ app.use(
     store: MongoStore.create({
       mongoUrl: 'mongodb://127.0.0.1:27017/User',
       autoRemove: 'disabled'
-    })
+    }),
+    function(err){
+      console.log(err || 'connect-mongodb setup ok');
+    }
   })
 );
 

@@ -6,5 +6,15 @@
     </head>
     <body>
          <h1>This is home page</h1>
+         <%  if(locals.user) {   %>
+            <%= user.name%>
+            <a href="/users/Profile"> Profile</a>
+            <br />
+            <a href="/users/signout">Sign Out</a> 
+           <% } else { %>
+            <a href="/users/signin">Sign In</a>
+            <br/>
+             <a href="/users/signup">Sign Up</a>
+           <% } %>
     </body>
 </html>
