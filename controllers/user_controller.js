@@ -69,11 +69,16 @@ module.exports.createSession =  function(req,res){
 
 
 
-// // signout
-// module.exports.signout = function(req,res){
-//       //  cleare the user_id after user click on signout
-//       console.log(req.cookies.user_id);
-//       res.clearCookie('user_id'); 
-//       console.log("user_id is removed from cookie");
-//     return res.redirect('/users/signin');
-// }
+// signout
+module.exports.signout = function(req,res){
+      //  cleare the user_id after user click on signout
+      // console.log(req.cookies.user_id);
+      // res.clearCookie('user_id'); 
+      // console.log("user_id is removed from cookie");
+      req.logout((err)=>{ //this logout is provided by passport and it will destroy the session
+       if(err){
+        console.log(err);
+       }
+      });
+    return res.redirect('/');
+}
